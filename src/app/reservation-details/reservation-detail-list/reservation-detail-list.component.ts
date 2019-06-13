@@ -29,4 +29,15 @@ export class ReservationDetailListComponent implements OnInit {
       console.log(err);
     })
   }
+
+  onInvoice(id){
+    this.service.Invoice(id)
+    .subscribe(res=> {
+      this.service.refreshList();
+      this.toastr.warning('Dwonloaded successfully', 'Invoice');
+    },
+    err => {
+      console.log(err);
+    })
+  }
 }

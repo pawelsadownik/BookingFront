@@ -24,6 +24,10 @@ export class ReservationDetailService {
     return this.http.delete(this.rootURL + '/guest/DeleteGuest/' + id);
       }
 
+  Invoice(id){
+    window.open(this.rootURL + '/pdfcreator/GetInvoice/' + id);
+    return this.http.get(this.rootURL + '/pdfcreator/GetInvoice/' + id);
+  }
   refreshList(){
     this.http.get(this.rootURL +'/guest/GetAllGuests')
     .toPromise()

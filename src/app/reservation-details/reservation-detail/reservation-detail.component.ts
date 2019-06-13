@@ -20,18 +20,18 @@ export class ReservationDetailComponent implements OnInit {
 
   resetForm(form?: NgForm){
     if(form!=null)
-    form.resetForm();
+    form.form.reset();
     this.service.formData = {
-      id: null,
-      FirstName :'',
-      LastName :'',
-      Email : '',
-      CompanyName :'',
-      Nip : null,
-      Price : null,
-      ReservationNumber : null,
-      CheckIn : null,
-      CheckOut : null
+      id: 0,
+      firstName :'',
+      lastName :'',
+      email : '',
+      companyName :'',
+      nip : null,
+      price : null,
+      reservationNumber : null,
+      checkIn : null,
+      checkOut : null
     }
   }
 

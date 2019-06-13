@@ -1,12 +1,12 @@
 export class ReservationDetail {
       id: number;
-      FirstName :string;
-      LastName :string;
-      Email : string;
-      CompanyName :string;
-      Nip : number;
-      Price : number;
-      ReservationNumber : number;
-      CheckIn : Date;
-      CheckOut : Date;
+      firstName :string;
+      lastName :string;
+      email : string;
+      companyName :string;
+      nip : number;
+      price : number;
+      reservationNumber : number;
+      checkIn : Date;
+      checkOut : Date;
 }
