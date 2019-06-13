@@ -1,4 +1,5 @@
 export class ReservationDetail {
+      id: number;
       FirstName :string;
       LastName :string;
       Email : string;

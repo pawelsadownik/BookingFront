@@ -1,3 +1,115 @@
-<p>
-  reservation-detail works!
-</p>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="form-row">
+  <!-- FIRSTNAME-->
+  <div class="form-group col-md-6">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      <input name="FirstName"#FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control" placeholder="First Name" required>
+    </div>
+  </div>
+
+   <!-- LASTNAME-->
+   <div class="form-group col-md-6">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control" placeholder="Last Name" required>
+    </div>
+  </div>
+</div>
+   <!-- EMAIL-->
+   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-envelope"></i>
+        </div>
+      </div>
+      <input name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control" placeholder="e-mail" required>
+    </div>
+  </div>
+
+   <!-- COMPANY NAME-->
+   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-building"></i>
+        </div>
+      </div>
+      <input name="CompanyName" #CompanyName="ngModel" [(ngModel)]="service.formData.CompanyName" class="form-control" placeholder="Company Name" required>
+    </div>
+  </div>
+
+   <!-- NIP-->
+   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-list-ol"></i>
+        </div>
+      </div>
+      <input name="Nip" #Nip="ngModel" [(ngModel)]="service.formData.Nip" class="form-control" placeholder="Nip" required>
+    </div>
+  </div>
+
+   <!-- PRICE-->
+   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+      </div>
+      <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price" class="form-control" placeholder="Price" required>
+    </div>
+  </div>
+
+   <!-- RESERVATION NUMBER-->
+   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-list-ol"></i>
+        </div>
+      </div>
+      <input name="ReservationNumber" #ReservationNumber="ngModel" [(ngModel)]="service.formData.ReservationNumber" class="form-control" placeholder="Reservation Number" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+   <!-- CHECK IN-->
+   <div class="form-group col-md-6">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+      </div>
+      <input type="date" name="CheckIn" #CheckIn="ngModel" [(ngModel)]="service.formData.CheckIn" class="form-control" required>
+    </div>
+  </div>
+
+   <!-- CHECK OUT-->
+   <div class="form-group col-md-6">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+      </div>
+      <input type="date" name="CheckOut" #CheckOut="ngModel" [(ngModel)]="service.formData.CheckOut" class="form-control" required>
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+  <button class="btn btn-success btn-lg btn-block" type="submit"> <i class="fas fa-save"></i> Submit</button>
+</div>
+</form>
