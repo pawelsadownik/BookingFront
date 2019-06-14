@@ -23,13 +23,13 @@ export class ReservationDetailListComponent implements OnInit {
 
   onDelete(id){
     this.service.DeleteGuest(id)
-    .subscribe(res=> {
-      this.toastr.warning('Deleted successfully', 'Reservation');
-      this.service.refreshList();
-    },
-    err => {
-      console.log(err);
-    })
+    // .subscribe(res=> {
+    //   this.toastr.warning('Deleted successfully2', 'Reservation');
+    //   this.service.refreshList();
+    // },
+    // err => {
+    //   console.log(err);
+    // })
   }
 
   onInvoice(id){
