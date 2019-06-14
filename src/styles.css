@@ -14,3 +14,28 @@ input.ng-valid{
 table tr:hover{
   cursor: pointer;
 }
+
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 450px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }
+.col-md-6 {
+  margin-left: auto;
+  margin-right: auto;
+}
+h1{
+  text-align: center;
+  color:#404040
+}
+h3{
+  text-align: center;
+  color:#404040;
+}
+hr.styleLine{
+	border-top: 10px solid #003680;
+}

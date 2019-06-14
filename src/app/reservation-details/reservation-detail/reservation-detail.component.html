@@ -1,5 +1,5 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-    <input type="hidden" name="Id" [value]="service.formData.Id">
+    <input type="hidden" name="id" [value]="service.formData.id">
   <div class="form-row">
   <!-- FIRSTNAME-->
   <div class="form-group col-md-6">
@@ -9,7 +9,7 @@
           <i class="fas fa-user"></i>
         </div>
       </div>
-      <input name="FirstName"#FirstName="ngModel" [(ngModel)]="service.formData.FirstName" class="form-control" placeholder="First Name" required>
+      <input name="firstName"#firstName="ngModel" [(ngModel)]="service.formData.firstName" class="form-control" placeholder="First Name" required>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
           <i class="fas fa-user"></i>
         </div>
       </div>
-      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" class="form-control" placeholder="Last Name" required>
+      <input name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" class="form-control" placeholder="Last Name" required>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
           <i class="fas fa-envelope"></i>
         </div>
       </div>
-      <input name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" class="form-control" placeholder="e-mail" required>
+      <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="e-mail" required>
     </div>
   </div>
 
@@ -45,7 +45,7 @@
           <i class="fas fa-building"></i>
         </div>
       </div>
-      <input name="CompanyName" #CompanyName="ngModel" [(ngModel)]="service.formData.CompanyName" class="form-control" placeholder="Company Name" required>
+      <input name="companyName" #companyName="ngModel" [(ngModel)]="service.formData.companyName" class="form-control" placeholder="Company Name" required>
     </div>
   </div>
 
@@ -57,7 +57,7 @@
           <i class="fas fa-list-ol"></i>
         </div>
       </div>
-      <input name="Nip" #Nip="ngModel" [(ngModel)]="service.formData.Nip" class="form-control" placeholder="Nip" required>
+      <input name="nip" #Nip="ngModel" [(ngModel)]="service.formData.nip" class="form-control" placeholder="nip" required>
     </div>
   </div>
 
@@ -69,7 +69,7 @@
           <i class="fas fa-dollar-sign"></i>
         </div>
       </div>
-      <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price" class="form-control" placeholder="Price" required>
+      <input name="price" #price="ngModel" [(ngModel)]="service.formData.price" class="form-control" placeholder="Price" required>
     </div>
   </div>
 
@@ -81,7 +81,7 @@
           <i class="fas fa-list-ol"></i>
         </div>
       </div>
-      <input name="ReservationNumber" #ReservationNumber="ngModel" [(ngModel)]="service.formData.ReservationNumber" class="form-control" placeholder="Reservation Number" required>
+      <input name="reservationNumber" #reservationNumber="ngModel" [(ngModel)]="service.formData.reservationNumber" class="form-control" placeholder="Reservation Number" required>
     </div>
   </div>
 
@@ -94,7 +94,7 @@
           <i class="fas fa-calendar-alt"></i>
         </div>
       </div>
-      <input type="date" name="CheckIn" #CheckIn="ngModel" [(ngModel)]="service.formData.CheckIn" class="form-control" required>
+      <input type="date" name="checkIn" #checkIn="ngModel" [(ngModel)]="service.formData.checkIn" class="form-control" required>
     </div>
   </div>
 
@@ -106,11 +106,11 @@
           <i class="fas fa-calendar-alt"></i>
         </div>
       </div>
-      <input type="date" name="CheckOut" #CheckOut="ngModel" [(ngModel)]="service.formData.CheckOut" class="form-control" required>
+      <input type="date" name="checkOut" #checkOut="ngModel" [(ngModel)]="service.formData.checkOut" class="form-control" required>
     </div>
   </div>
   </div>
   <div class="form-group">
-  <button class="btn btn-success btn-lg btn-block" type="submit"> <i class="fas fa-save"></i> Submit</button>
+  <button class="btn btn-primary btn-lg btn-block active" type="submit"> <i class="fas fa-save"></i> Submit</button>
 </div>
 </form>

@@ -1,3 +1,5 @@
+import { ReservationDetailStatsComponent } from './../reservation-detail-stats/reservation-detail-stats.component';
+import { ReservationStats } from './../../shared/reservation-stats.model';
 import { ReservationDetailService } from './../../shared/reservation-detail.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -11,8 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ReservationDetailComponent implements OnInit {
 
-  constructor(private service:ReservationDetailService,
-    private toastr: ToastrService) { }
+  constructor(
+    private service:ReservationDetailService,
+    private toastr: ToastrService
+    ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -23,10 +27,10 @@ export class ReservationDetailComponent implements OnInit {
     form.form.reset();
     this.service.formData = {
       id: 0,
-      firstName :'',
-      lastName :'',
-      email : '',
-      companyName :'',
+      firstName :null,
+      lastName :null,
+      email : null,
+      companyName :null,
       nip : null,
       price : null,
       reservationNumber : null,
@@ -36,35 +40,44 @@ export class ReservationDetailComponent implements OnInit {
   }
 
     onSubmit(form:NgForm){
-      this.insertRecord(form)
-
-    }
-
+    if (this.service.formData.id == 0)
+      this.insertRecord(form);
+    else
+      this.updateRecord(form);
+  }
       insertRecord(form:NgForm){
         this.service.CreateGuest().subscribe(
           res => {
-            debugger;
             this.resetForm(form);
-            this.toastr.success('Success!!', 'Adding new reservation');
+            this.toastr.info('Success!!', 'Adding new reservation');
             this.service.refreshList();
+            this.service.getStatistics();
+            this.service.getStatisticsByYear2017();
+            this.service.getStatisticsByYear2018();
+            this.service.getStatisticsByYear2019();
           },
           err => {
-            debugger;
             console.log(err);
           }
        )
       }
 
       updateRecord(form:NgForm){
-        this.service.UpdateGuest().subscribe(
+        this.service.UpdateGuest(form.value).subscribe(
           res => {
             this.resetForm(form);
             this.toastr.info('Success!!', 'Update reservation');
             this.service.refreshList();
+            this.service.getStatistics();
+            this.service.getStatisticsByYear2017();
+            this.service.getStatisticsByYear2018();
+            this.service.getStatisticsByYear2019();
+
 
           },
           err => {
             console.log(err);
+            this.service.refreshList();
           }
        )
       }

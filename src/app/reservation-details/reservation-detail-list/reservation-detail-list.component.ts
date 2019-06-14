@@ -2,6 +2,7 @@ import { ReservationDetailService } from './../../shared/reservation-detail.serv
 import { Component, OnInit } from '@angular/core';
 import { ReservationDetail } from 'src/app/shared/reservation-detail.model';
 import { ToastrService } from 'ngx-toastr';
+import { ReservationStats } from 'src/app/shared/reservation-stats.model';
 
 @Component({
   selector: 'app-reservation-detail-list',
@@ -19,11 +20,12 @@ export class ReservationDetailListComponent implements OnInit {
   populateForm(p:ReservationDetail){
     this.service.formData = Object.assign({},p);
   }
+
   onDelete(id){
     this.service.DeleteGuest(id)
     .subscribe(res=> {
-      this.service.refreshList();
       this.toastr.warning('Deleted successfully', 'Reservation');
+      this.service.refreshList();
     },
     err => {
       console.log(err);
@@ -34,7 +36,7 @@ export class ReservationDetailListComponent implements OnInit {
     this.service.Invoice(id)
     .subscribe(res=> {
       this.service.refreshList();
-      this.toastr.warning('Dwonloaded successfully', 'Invoice');
+      this.toastr.warning('Downloaded successfully', 'Invoice');
     },
     err => {
       console.log(err);

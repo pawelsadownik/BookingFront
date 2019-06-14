@@ -10,6 +10,7 @@ import { ReservationDetailService } from './shared/reservation-detail.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ReservationDetailStatsComponent } from './reservation-details/reservation-detail-stats/reservation-detail-stats.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     ReservationDetailsComponent,
     ReservationDetailComponent,
-    ReservationDetailListComponent
+    ReservationDetailListComponent,
+    ReservationDetailStatsComponent
 
   ],
   imports: [

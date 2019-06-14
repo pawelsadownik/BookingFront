@@ -1,9 +1,11 @@
-<table class="table table-hover">
+
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+<table class="table table-hover table-striped ">
+
   <tr *ngFor="let p of service.listOfGuests;">
 
     <td (click)="populateForm(p)">{{p.firstName}} {{p.lastName}}</td>
     <td (click)="populateForm(p)">{{p.checkIn | date:'mediumDate'}} - {{p.checkOut | date:'mediumDate'}}</td>
-
     <td>
       <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(p.id)"></i>
     </td>
@@ -12,3 +14,5 @@
       </td>
   </tr>
 </table>
+
+</div>
