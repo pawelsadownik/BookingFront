@@ -1,0 +1,27 @@
+<div class='maincontainer'>
+  <gc-spread-sheets [hostStyle]="hostStyle" (workbookInitialized)="workbookInit($event)">
+  </gc-spread-sheets>
+  <div class="row" style="margin-bottom:15px;"></div>
+
+  <div class="row" style="margin-bottom:15px;">
+      <label class="btn btn-success">
+        <input type="file" name="files[]" multiple id="jsonFile" accept=".xlsx" (change)="onFileChange($event)" style="display: none !important"/>
+          Read
+      </label>
+        <input type="file"  (change)="uploadFile(file.files)" style="display:none;">
+        <button type="button" class="btn btn-success" (click)="file.click()">Send file to server</button>
+
+        <button class="btn btn-success" (click)="onClickMe($event)">Excel to JSON</button>
+
+        <button class="btn btn-success" (click)="onClickMe($event)">Load to database</button>
+
+    </div>
+  </div>
+  <span class="upload" *ngIf="progress> 0">
+      {{progress}}%
+    </span>
+    <span class="upload" *ngIf="message">
+      {{message}}
+    </span>
+
+
